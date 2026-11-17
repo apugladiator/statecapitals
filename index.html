@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#17324d">
+<title>U.S. States & Capitals Flashcards</title>
+<style>
+:root{--navy:#17324d;--blue:#2865a6;--pale:#eef4fa;--ink:#1d2935;--muted:#647386;--line:#d8e0e8;--green:#237a57;--red:#b64a45;--gold:#a66b12}
+*{box-sizing:border-box}body{margin:0;background:#f3f6f9;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+button,select{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:11px 16px;font-weight:650;transition:.15s}button:disabled{opacity:.45;cursor:not-allowed}
+header{background:var(--navy);color:white;padding:22px 24px}header .wrap{max-width:1120px;margin:auto}h1{font-size:clamp(23px,4vw,32px);margin:0 0 5px}header p{margin:0;color:#d3dfeb}
+main{max-width:1120px;margin:26px auto;padding:0 18px 48px}.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 5px 20px #18334d0b}
+.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}.mode-card{border:1px solid var(--line);border-radius:14px;padding:20px;background:#fff}.mode-card h2{margin:0 0 8px;font-size:20px}.mode-card p{color:var(--muted);line-height:1.5;min-height:48px}.primary{background:var(--blue);color:#fff}.secondary{background:var(--pale);color:var(--navy)}.danger{background:#fff0ee;color:#a53e38}.hard.active{background:#fff0d7;color:#8b570b;border:1px solid #e8c98d}.hard{background:#fff7e9;color:#925e16;border:1px solid #ead9b8}.subtle{background:#f2f4f7;color:#394b5e}
+.settings{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}.field label{display:block;font-size:13px;font-weight:700;color:#536477;margin:0 0 7px}.field select{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;background:white;color:var(--ink)}
+.selection-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.selection-tools{display:flex;gap:8px;flex-wrap:wrap}.state-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:16px 0}.state-option{display:flex;gap:7px;align-items:center;border:1px solid var(--line);border-radius:8px;padding:8px;font-size:13px}.state-option input{accent-color:var(--blue)}
+.study-layout{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:18px;align-items:start}.study-main{min-width:0}.topline{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}.progress{font-size:14px;color:var(--muted);font-weight:650}.progressbar{height:8px;background:#e7edf3;border-radius:99px;overflow:hidden;margin:10px 0 18px}.progressbar span{display:block;height:100%;background:#3c83c4;width:0;transition:width .2s}
+.flashcard{background:white;border:1px solid var(--line);border-radius:18px;min-height:430px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;box-shadow:0 8px 28px #19334d10;position:relative}.face-label{text-transform:uppercase;letter-spacing:.12em;color:#7a8998;font-size:12px;font-weight:800;margin-bottom:22px}.answer{font-size:clamp(30px,5vw,52px);font-weight:800;line-height:1.12;color:var(--navy);overflow-wrap:anywhere}.answer.small{font-size:clamp(24px,4vw,38px)}.shape-wrap{width:min(100%,380px);height:260px;display:flex;align-items:center;justify-content:center}.shape-wrap svg{width:100%;height:100%;overflow:visible}.shape-wrap .shape{fill:#dceafa;stroke:#245b8d;stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}.shape-loading{font-size:14px;color:var(--muted)}
+.card-actions{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:15px;flex-wrap:wrap}.left-actions,.right-actions{display:flex;gap:9px;align-items:center}.side-panel{display:grid;gap:12px}.stat{background:white;border:1px solid var(--line);border-radius:14px;padding:17px}.stat-label{font-size:12px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.08em}.stat-value{font-size:30px;font-weight:800;color:var(--navy);font-variant-numeric:tabular-nums;margin-top:5px}.stat-note{font-size:12px;color:var(--muted);margin-top:3px}.hard-count{color:var(--gold)}
+.completion{text-align:center;padding:32px 20px}.completion h2{font-size:30px;color:var(--navy);margin:5px 0 8px}.completion .big-time{font-size:42px;font-weight:850;color:var(--blue);font-variant-numeric:tabular-nums;margin:14px}.hard-list{text-align:left;max-width:680px;margin:24px auto}.hard-row{padding:11px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px}.muted{color:var(--muted)}.hidden{display:none!important}.small-note{font-size:13px;color:var(--muted);line-height:1.45}.footer-note{font-size:12px;color:var(--muted);margin-top:18px}
+@media(max-width:760px){.study-layout{grid-template-columns:1fr}.side-panel{grid-template-columns:repeat(3,1fr);order:-1}.stat{padding:12px}.stat-value{font-size:24px}.flashcard{min-height:360px}.state-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:520px){main{margin:16px auto;padding:0 12px 30px}.mode-grid,.settings{grid-template-columns:1fr}.mode-card p{min-height:0}.state-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.side-panel{grid-template-columns:repeat(3,1fr);gap:7px}.stat-label{font-size:10px}.stat-value{font-size:21px}.flashcard{padding:20px 14px;min-height:330px}.card-actions button{padding:10px 12px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><h1>U.S. States & Capitals Flashcards</h1><p>Learn all 50 states, abbreviations, capitals, and shapes.</p></div></header>
+<main>
+<section id="home">
+  <div class="mode-grid">
+    <div class="mode-card"><h2>Mode 1 · All 50 States</h2><p>Practice every state in a shuffled deck. Track your time and flag anything you need to study again.</p><button class="primary" id="allMode">Study all 50 states</button></div>
+    <div class="mode-card"><h2>Mode 2 · Custom Study</h2><p>Build a smaller deck from states you select, or quickly review all the states you marked Hard.</p><button class="secondary" id="customMode">Choose states to study</button></div>
+  </div>
+  <div class="panel">
+    <h2 style="margin:0 0 8px">Choose what appears on each side</h2>
+    <p class="small-note">Each side can show the state name, abbreviation, capital, or state outline. The two sides can be set independently.</p>
+    <div class="settings">
+      <div class="field"><label for="frontField">FRONT OF CARD</label><select id="frontField"><option value="name">State name</option><option value="abbr">Abbreviation</option><option value="capital">Capital</option><option value="shape">State shape</option></select></div>
+      <div class="field"><label for="backField">BACK OF CARD</label><select id="backField"><option value="capital">Capital</option><option value="name">State name</option><option value="abbr">Abbreviation</option><option value="shape">State shape</option></select></div>
+    </div>
+    <div id="customPicker" class="hidden">
+      <div class="selection-head"><div><h3 style="margin:0">Select your states</h3><span class="small-note" id="selectionCount">0 selected</span></div><div class="selection-tools"><button class="subtle" id="selectAll">Select all</button><button class="subtle" id="selectNone">Clear</button><button class="subtle" id="selectHard">Select Hard states</button></div></div>
+      <div class="state-grid" id="stateGrid"></div>
+      <p class="small-note">Your Hard list is saved on this device and browser. Selecting Hard states makes it easy to repeat the cards you struggled with.</p>
+      <button class="primary" id="startCustom">Start custom study</button>
+    </div>
+  </div>
+  <p class="footer-note">Tip: Mark a card Hard whenever you are unsure. Your Hard list stays saved between visits on this browser.</p>
+</section>
+<section id="study" class="hidden">
+  <div class="study-layout">
+    <div class="study-main">
+      <div class="topline"><button class="subtle" id="backHome">← Back to setup</button><div class="progress" id="progressText">Card 1 of 50</div></div>
+      <div class="progressbar"><span id="progressFill"></span></div>
+      <div class="flashcard">
+        <div class="face-label" id="faceLabel">FRONT · STATE NAME</div>
+        <div id="cardContent" class="answer">Alabama</div>
+      </div>
+      <div class="card-actions">
+        <div class="left-actions"><button class="hard" id="hardBtn">★ Hard</button></div>
+        <div class="right-actions"><button class="secondary" id="flipBtn">Flip card</button><button class="primary" id="nextBtn">Next card →</button></div>
+      </div>
+      <p class="small-note" style="text-align:center">Use Flip card to reveal the other side. Mark Hard on either side; it will remain flagged for review.</p>
+    </div>
+    <aside class="side-panel">
+      <div class="stat"><div class="stat-label">Elapsed time</div><div class="stat-value" id="timer">00:00</div><div class="stat-note">Time in this session</div></div>
+      <div class="stat"><div class="stat-label">Completed</div><div class="stat-value" id="completedCount">0 / 50</div><div class="stat-note">Cards finished</div></div>
+      <div class="stat"><div class="stat-label">Marked hard</div><div class="stat-value hard-count" id="hardCount">0</div><div class="stat-note">In this session</div></div>
+    </aside>
+  </div>
+</section>
+<section id="results" class="hidden">
+  <div class="panel completion">
+    <div style="font-size:42px">🎉</div><h2>Study session complete!</h2>
+    <p class="muted" id="resultSubtitle">You completed all 50 cards.</p>
+    <div class="big-time" id="finalTime">00:00</div><div class="muted">Total time</div>
+    <div class="hard-list"><h3 style="color:var(--navy)">States you marked Hard</h3><div id="hardResults"></div></div>
+    <div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap"><button class="primary" id="reviewHard">Study Hard states</button><button class="secondary" id="restart">Start another session</button><button class="subtle" id="homeResults">Back to setup</button></div>
+  </div>
+</section>
+</main>
+<script>
+const STATES=[
+["Alabama","AL","Montgomery"],["Alaska","AK","Juneau"],["Arizona","AZ","Phoenix"],["Arkansas","AR","Little Rock"],["California","CA","Sacramento"],["Colorado","CO","Denver"],["Connecticut","CT","Hartford"],["Delaware","DE","Dover"],["Florida","FL","Tallahassee"],["Georgia","GA","Atlanta"],["Hawaii","HI","Honolulu"],["Idaho","ID","Boise"],["Illinois","IL","Springfield"],["Indiana","IN","Indianapolis"],["Iowa","IA","Des Moines"],["Kansas","KS","Topeka"],["Kentucky","KY","Frankfort"],["Louisiana","LA","Baton Rouge"],["Maine","ME","Augusta"],["Maryland","MD","Annapolis"],["Massachusetts","MA","Boston"],["Michigan","MI","Lansing"],["Minnesota","MN","Saint Paul"],["Mississippi","MS","Jackson"],["Missouri","MO","Jefferson City"],["Montana","MT","Helena"],["Nebraska","NE","Lincoln"],["Nevada","NV","Carson City"],["New Hampshire","NH","Concord"],["New Jersey","NJ","Trenton"],["New Mexico","NM","Santa Fe"],["New York","NY","Albany"],["North Carolina","NC","Raleigh"],["North Dakota","ND","Bismarck"],["Ohio","OH","Columbus"],["Oklahoma","OK","Oklahoma City"],["Oregon","OR","Salem"],["Pennsylvania","PA","Harrisburg"],["Rhode Island","RI","Providence"],["South Carolina","SC","Columbia"],["South Dakota","SD","Pierre"],["Tennessee","TN","Nashville"],["Texas","TX","Austin"],["Utah","UT","Salt Lake City"],["Vermont","VT","Montpelier"],["Virginia","VA","Richmond"],["Washington","WA","Olympia"],["West Virginia","WV","Charleston"],["Wisconsin","WI","Madison"],["Wyoming","WY","Cheyenne"]
+].map(([name,abbr,capital])=>({name,abbr,capital}));
+const $=id=>document.getElementById(id);
+const fieldNames={name:"State name",abbr:"Abbreviation",capital:"Capital",shape:"State shape"};
+let hardSaved=new Set(JSON.parse(localStorage.getItem("statesHard")||"[]"));
+let deck=[],index=0,flipped=false,sessionHard=new Set(),startedAt=0,tick=null,elapsed=0,mode="all",lastDeck=[];
+let geoFeatures=null;
+function saveHard(){localStorage.setItem("statesHard",JSON.stringify([...hardSaved]));}
+function show(section){["home","study","results"].forEach(id=>$(id).classList.toggle("hidden",id!==section));}
+function shuffle(a){let b=[...a];for(let i=b.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
+function timeText(s){let m=Math.floor(s/60),sec=s%60;return String(m).padStart(2,"0")+":"+String(sec).padStart(2,"0");}
+function currentElapsed(){return elapsed+Math.floor((Date.now()-startedAt)/1000);}
+function updateTimer(){$("timer").textContent=timeText(currentElapsed());}
+function renderPicker(){
+ const grid=$("stateGrid");grid.innerHTML="";
+ STATES.forEach(s=>{let label=document.createElement("label");label.className="state-option";let cb=document.createElement("input");cb.type="checkbox";cb.value=s.abbr;cb.checked=false;cb.addEventListener("change",updateSelectionCount);label.append(cb,document.createTextNode(s.name+" ("+s.abbr+")"));grid.append(label);});
+ updateSelectionCount();
+}
+function updateSelectionCount(){let n=$("stateGrid").querySelectorAll("input:checked").length;$("selectionCount").textContent=n+" selected";}
+function openCustom(){mode="custom";$("customPicker").classList.remove("hidden");renderPicker();show("home");}
+function setSelection(list){$("stateGrid").querySelectorAll("input").forEach(cb=>cb.checked=list.includes(cb.value));updateSelectionCount();}
+function startGame(list,which){
+ if(!list.length){alert("Please select at least one state.");return;}
+ mode=which;deck=shuffle(list);lastDeck=[...list];index=0;flipped=false;sessionHard=new Set();elapsed=0;startedAt=Date.now();
+ clearInterval(tick);tick=setInterval(updateTimer,250);show("study");renderCard();
+}
+function getField(){return flipped?$("backField").value:$("frontField").value;}
+function renderShape(state){
+ const host=$("cardContent");host.className="shape-wrap";
+ if(!geoFeatures){host.innerHTML='<div class="shape-loading">Loading state outline…</div>';loadGeo().then(()=>{if(!flipped&&getField()==="shape"||flipped&&getField()==="shape")renderCard();});return;}
+ const feature=geoFeatures.find(f=>f.properties.name===state.name);
+ if(!feature){host.innerHTML='<div class="shape-loading">Outline unavailable</div>';return;}
+ let polys=feature.geometry.type==="Polygon"?[feature.geometry.coordinates]:feature.geometry.coordinates;
+ let pts=[];polys.forEach(poly=>poly[0].forEach(p=>pts.push(p)));
+ let xs=pts.map(p=>p[0]),ys=pts.map(p=>p[1]),minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys);
+ let w=maxX-minX||1,h=maxY-minY||1,pad=16,scale=Math.min((360-2*pad)/w,(240-2*pad)/h);
+ let paths=[];
+ polys.forEach(poly=>poly.forEach(ring=>{let d=ring.map((p,i)=>{let x=180+(p[0]-(minX+maxX)/2)*scale,y=120-(p[1]-(minY+maxY)/2)*scale;return (i?"L":"M")+x.toFixed(1)+" "+y.toFixed(1)}).join(" ")+" Z";paths.push(d);}));
+ host.innerHTML='<svg viewBox="0 0 360 240" role="img" aria-label="'+state.name+' state outline"><path class="shape" d="'+paths.join(" ")+'"/></svg>';
+}
+async function loadGeo(){
+ if(geoFeatures)return;
+ try{let res=await fetch("https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json");if(!res.ok)throw Error();let json=await res.json();geoFeatures=json.features;}
+ catch(e){geoFeatures=[];}
+}
+function renderCard(){
+ const state=deck[index],field=getField(),side=flipped?"BACK":"FRONT";
+ $("faceLabel").textContent=side+" · "+fieldNames[field].toUpperCase();
+ const host=$("cardContent");
+ if(field==="shape"){renderShape(state);}else{host.className="answer";host.textContent=state[field];if(state.name.length>16||state.capital.length>16)host.classList.add("small");}
+ $("progressText").textContent="Card "+(index+1)+" of "+deck.length;
+ $("progressFill").style.width=(index/deck.length*100)+"%";
+ $("completedCount").textContent=index+" / "+deck.length;
+ $("hardCount").textContent=sessionHard.size;
+ $("hardBtn").classList.toggle("active",sessionHard.has(state.abbr));
+ $("hardBtn").textContent=sessionHard.has(state.abbr)?"★ Marked Hard":"★ Hard";
+ $("flipBtn").textContent=flipped?"Show front":"Flip card";
+ $("nextBtn").textContent=index===deck.length-1?"Finish session ✓":"Next card →";
+ updateTimer();
+}
+function markHard(){let s=deck[index];if(sessionHard.has(s.abbr)){sessionHard.delete(s.abbr);hardSaved.delete(s.abbr);}else{sessionHard.add(s.abbr);hardSaved.add(s.abbr);}saveHard();renderCard();}
+function nextCard(){if(index===deck.length-1){finish();return;}index++;flipped=false;renderCard();}
+function finish(){
+ clearInterval(tick);elapsed=currentElapsed();$("finalTime").textContent=timeText(elapsed);
+ $("resultSubtitle").textContent="You completed "+deck.length+" "+(deck.length===1?"card.":"cards.");
+ let hardStates=STATES.filter(s=>sessionHard.has(s.abbr));let box=$("hardResults");
+ if(!hardStates.length){box.innerHTML='<p class="muted">Great work — you did not mark any states Hard!</p>';$("reviewHard").classList.add("hidden");}
+ else{box.innerHTML=hardStates.map(s=>'<div class="hard-row"><strong>'+s.name+' ('+s.abbr+')</strong><span class="muted">'+s.capital+'</span></div>').join("");$("reviewHard").classList.remove("hidden");}
+ show("results");
+}
+$("allMode").onclick=()=>startGame(STATES,"all");
+$("customMode").onclick=openCustom;
+$("selectAll").onclick=()=>setSelection(STATES.map(s=>s.abbr));
+$("selectNone").onclick=()=>setSelection([]);
+$("selectHard").onclick=()=>setSelection([...hardSaved]);
+$("startCustom").onclick=()=>{let ids=[...$("stateGrid").querySelectorAll("input:checked")].map(cb=>cb.value);startGame(STATES.filter(s=>ids.includes(s.abbr)),"custom");};
+$("backHome").onclick=()=>{clearInterval(tick);show("home");};
+$("hardBtn").onclick=markHard;
+$("flipBtn").onclick=()=>{flipped=!flipped;renderCard();};
+$("nextBtn").onclick=nextCard;
+$("reviewHard").onclick=()=>startGame(STATES.filter(s=>hardSaved.has(s.abbr)),"custom");
+$("restart").onclick=()=>startGame(lastDeck,"custom");
+$("homeResults").onclick=()=>show("home");
+renderPicker();
+loadGeo();
+</script>
+</body>
+</html>
