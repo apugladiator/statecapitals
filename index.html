@@ -12,10 +12,10 @@ button,select{font:inherit}button{cursor:pointer;border:0;border-radius:10px;pad
 header{background:var(--navy);color:white;padding:22px 24px}header .wrap{max-width:1120px;margin:auto}h1{font-size:clamp(23px,4vw,32px);margin:0 0 5px}header p{margin:0;color:#d3dfeb}
 main{max-width:1120px;margin:26px auto;padding:0 18px 48px}.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 5px 20px #18334d0b}
 .mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}.mode-card{border:1px solid var(--line);border-radius:14px;padding:20px;background:#fff}.mode-card h2{margin:0 0 8px;font-size:20px}.mode-card p{color:var(--muted);line-height:1.5;min-height:48px}.primary{background:var(--blue);color:#fff}.secondary{background:var(--pale);color:var(--navy)}.danger{background:#fff0ee;color:#a53e38}.hard.active{background:#fff0d7;color:#8b570b;border:1px solid #e8c98d}.hard{background:#fff7e9;color:#925e16;border:1px solid #ead9b8}.subtle{background:#f2f4f7;color:#394b5e}
-.settings{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}.field label{display:block;font-size:13px;font-weight:700;color:#536477;margin:0 0 7px}.field select{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;background:white;color:var(--ink)}
+.settings{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}.field label{display:block;font-size:13px;font-weight:700;color:#536477;margin:0 0 7px}.field-options{display:grid;gap:9px;border:1px solid var(--line);border-radius:10px;padding:12px;background:#fbfcfe}.field-options label{display:flex;align-items:center;gap:9px;margin:0;color:var(--ink);font-size:14px;font-weight:550}.field-options input{width:18px;height:18px;accent-color:var(--blue)}
 .selection-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.selection-tools{display:flex;gap:8px;flex-wrap:wrap}.state-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:16px 0}.state-option{display:flex;gap:7px;align-items:center;border:1px solid var(--line);border-radius:8px;padding:8px;font-size:13px}.state-option input{accent-color:var(--blue)}
 .study-layout{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:18px;align-items:start}.study-main{min-width:0}.topline{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}.progress{font-size:14px;color:var(--muted);font-weight:650}.progressbar{height:8px;background:#e7edf3;border-radius:99px;overflow:hidden;margin:10px 0 18px}.progressbar span{display:block;height:100%;background:#3c83c4;width:0;transition:width .2s}
-.flashcard{background:white;border:1px solid var(--line);border-radius:18px;min-height:430px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;box-shadow:0 8px 28px #19334d10;position:relative}.face-label{text-transform:uppercase;letter-spacing:.12em;color:#7a8998;font-size:12px;font-weight:800;margin-bottom:22px}.answer{font-size:clamp(30px,5vw,52px);font-weight:800;line-height:1.12;color:var(--navy);overflow-wrap:anywhere}.answer.small{font-size:clamp(24px,4vw,38px)}.shape-wrap{width:min(100%,380px);height:260px;display:flex;align-items:center;justify-content:center}.shape-wrap svg{width:100%;height:100%;overflow:visible}.shape-wrap .shape{fill:#dceafa;stroke:#245b8d;stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}.shape-loading{font-size:14px;color:var(--muted)}
+.flashcard{background:white;border:1px solid var(--line);border-radius:18px;min-height:430px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;box-shadow:0 8px 28px #19334d10;position:relative;cursor:pointer;touch-action:manipulation;user-select:none}.face-label{text-transform:uppercase;letter-spacing:.12em;color:#7a8998;font-size:12px;font-weight:800;margin-bottom:22px}.answer{font-size:clamp(30px,5vw,52px);font-weight:800;line-height:1.12;color:var(--navy);overflow-wrap:anywhere}.answer.small{font-size:clamp(24px,4vw,38px)}.card-values{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;width:100%}.card-values .answer{font-size:clamp(23px,4vw,40px)}.card-values .answer.small{font-size:clamp(20px,3.5vw,32px)}.tap-hint{position:absolute;bottom:15px;color:#7a8998;font-size:12px;font-weight:650}.shape-wrap{width:min(100%,380px);height:260px;display:flex;align-items:center;justify-content:center}.shape-wrap svg{width:100%;height:100%;overflow:visible}.shape-wrap .shape{fill:#dceafa;stroke:#245b8d;stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}.shape-loading{font-size:14px;color:var(--muted)}
 .card-actions{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:15px;flex-wrap:wrap}.left-actions,.right-actions{display:flex;gap:9px;align-items:center}.side-panel{display:grid;gap:12px}.stat{background:white;border:1px solid var(--line);border-radius:14px;padding:17px}.stat-label{font-size:12px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.08em}.stat-value{font-size:30px;font-weight:800;color:var(--navy);font-variant-numeric:tabular-nums;margin-top:5px}.stat-note{font-size:12px;color:var(--muted);margin-top:3px}.hard-count{color:var(--gold)}
 .completion{text-align:center;padding:32px 20px}.completion h2{font-size:30px;color:var(--navy);margin:5px 0 8px}.completion .big-time{font-size:42px;font-weight:850;color:var(--blue);font-variant-numeric:tabular-nums;margin:14px}.hard-list{text-align:left;max-width:680px;margin:24px auto}.hard-row{padding:11px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px}.muted{color:var(--muted)}.hidden{display:none!important}.small-note{font-size:13px;color:var(--muted);line-height:1.45}.footer-note{font-size:12px;color:var(--muted);margin-top:18px}
 @media(max-width:760px){.study-layout{grid-template-columns:1fr}.side-panel{grid-template-columns:repeat(3,1fr);order:-1}.stat{padding:12px}.stat-value{font-size:24px}.flashcard{min-height:360px}.state-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
@@ -33,11 +33,7 @@ main{max-width:1120px;margin:26px auto;padding:0 18px 48px}.panel{background:whi
   <div class="panel">
     <h2 style="margin:0 0 8px">Choose what appears on each side</h2>
     <p class="small-note">Each side can show the state name, abbreviation, capital, or state outline. The two sides can be set independently.</p>
-    <div class="settings">
-      <div class="field"><label for="frontField">FRONT OF CARD</label><select id="frontField"><option value="name">State name</option><option value="abbr">Abbreviation</option><option value="capital">Capital</option><option value="shape">State shape</option></select></div>
-      <div class="field"><label for="backField">BACK OF CARD</label><select id="backField"><option value="capital">Capital</option><option value="name">State name</option><option value="abbr">Abbreviation</option><option value="shape">State shape</option></select></div>
-    </div>
-    <div id="customPicker" class="hidden">
+    <div class="settings"><div class="field"><label>FRONT OF CARD — select one or more</label><div class="field-options" id="frontFields"><label><input type="checkbox" value="name" checked> State name</label><label><input type="checkbox" value="abbr"> Abbreviation</label><label><input type="checkbox" value="capital"> Capital</label><label><input type="checkbox" value="shape"> State shape</label></div></div><div class="field"><label>BACK OF CARD — select one or more</label><div class="field-options" id="backFields"><label><input type="checkbox" value="capital" checked> Capital</label><label><input type="checkbox" value="name"> State name</label><label><input type="checkbox" value="abbr"> Abbreviation</label><label><input type="checkbox" value="shape"> State shape</label></div></div></div><div id="customPicker" class="hidden">
       <div class="selection-head"><div><h3 style="margin:0">Select your states</h3><span class="small-note" id="selectionCount">0 selected</span></div><div class="selection-tools"><button class="subtle" id="selectAll">Select all</button><button class="subtle" id="selectNone">Clear</button><button class="subtle" id="selectHard">Select Hard states</button></div></div>
       <div class="state-grid" id="stateGrid"></div>
       <p class="small-note">Your Hard list is saved on this device and browser. Selecting Hard states makes it easy to repeat the cards you struggled with.</p>
@@ -51,15 +47,14 @@ main{max-width:1120px;margin:26px auto;padding:0 18px 48px}.panel{background:whi
     <div class="study-main">
       <div class="topline"><button class="subtle" id="backHome">← Back to setup</button><div class="progress" id="progressText">Card 1 of 50</div></div>
       <div class="progressbar"><span id="progressFill"></span></div>
-      <div class="flashcard">
+      <div class="flashcard" id="flashcard" role="button" tabindex="0" aria-label="Tap to reveal; tap again for next card">
         <div class="face-label" id="faceLabel">FRONT · STATE NAME</div>
-        <div id="cardContent" class="answer">Alabama</div>
+        <div id="cardContent" class="answer">Alabama</div><div class="tap-hint" id="tapHint">Tap card to reveal</div>
       </div>
       <div class="card-actions">
-        <div class="left-actions"><button class="hard" id="hardBtn">★ Hard</button></div>
-        <div class="right-actions"><button class="secondary" id="flipBtn">Flip card</button><button class="primary" id="nextBtn">Next card →</button></div>
+        <div class="left-actions"><button class="hard" id="hardBtn">★ Save for later</button></div><div class="right-actions"><button class="secondary" id="previousBtn">← Previous</button></div>
       </div>
-      <p class="small-note" style="text-align:center">Use Flip card to reveal the other side. Mark Hard on either side; it will remain flagged for review.</p>
+      <p class="small-note" style="text-align:center">Tap or click the card to reveal the other side. Tap it again to move to the next card. Use Previous to revisit an earlier card.</p>
     </div>
     <aside class="side-panel">
       <div class="stat"><div class="stat-label">Elapsed time</div><div class="stat-value" id="timer">00:00</div><div class="stat-note">Time in this session</div></div>
@@ -106,42 +101,20 @@ function startGame(list,which){
  mode=which;deck=shuffle(list);lastDeck=[...list];index=0;flipped=false;sessionHard=new Set();elapsed=0;startedAt=Date.now();
  clearInterval(tick);tick=setInterval(updateTimer,250);show("study");renderCard();
 }
-function getField(){return flipped?$("backField").value:$("frontField").value;}
-function renderShape(state){
- const host=$("cardContent");host.className="shape-wrap";
- if(!geoFeatures){host.innerHTML='<div class="shape-loading">Loading state outline…</div>';loadGeo().then(()=>{if(!flipped&&getField()==="shape"||flipped&&getField()==="shape")renderCard();});return;}
- const feature=geoFeatures.find(f=>f.properties.name===state.name);
- if(!feature){host.innerHTML='<div class="shape-loading">Outline unavailable</div>';return;}
- let polys=feature.geometry.type==="Polygon"?[feature.geometry.coordinates]:feature.geometry.coordinates;
- let pts=[];polys.forEach(poly=>poly[0].forEach(p=>pts.push(p)));
- let xs=pts.map(p=>p[0]),ys=pts.map(p=>p[1]),minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys);
- let w=maxX-minX||1,h=maxY-minY||1,pad=16,scale=Math.min((360-2*pad)/w,(240-2*pad)/h);
- let paths=[];
- polys.forEach(poly=>poly.forEach(ring=>{let d=ring.map((p,i)=>{let x=180+(p[0]-(minX+maxX)/2)*scale,y=120-(p[1]-(minY+maxY)/2)*scale;return (i?"L":"M")+x.toFixed(1)+" "+y.toFixed(1)}).join(" ")+" Z";paths.push(d);}));
- host.innerHTML='<svg viewBox="0 0 360 240" role="img" aria-label="'+state.name+' state outline"><path class="shape" d="'+paths.join(" ")+'"/></svg>';
-}
+function selectedFields(side){return [...document.querySelectorAll("#"+side+"Fields input:checked")].map(x=>x.value);}
+function getFields(){return selectedFields(flipped?"back":"front");}
+function getField(){return getFields()[0]||"name";}
+function renderShapeInto(state,host){if(!geoFeatures){host.innerHTML='<div class="shape-loading">Loading state outline…</div>';loadGeo().then(()=>{if(!$("study").classList.contains("hidden"))renderCard();});return;}const feature=geoFeatures.find(f=>f.properties.name===state.name);if(!feature){host.innerHTML='<div class="shape-loading">Outline unavailable</div>';return;}let polys=feature.geometry.type==="Polygon"?[feature.geometry.coordinates]:feature.geometry.coordinates;let pts=[];polys.forEach(poly=>poly[0].forEach(p=>pts.push(p)));let xs=pts.map(p=>p[0]),ys=pts.map(p=>p[1]),minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys),scale=Math.min(328/(maxX-minX||1),208/(maxY-minY||1)),paths=[];polys.forEach(poly=>poly.forEach(ring=>{let d=ring.map((p,i)=>{let x=180+(p[0]-(minX+maxX)/2)*scale,y=120-(p[1]-(minY+maxY)/2)*scale;return(i?"L":"M")+x.toFixed(1)+" "+y.toFixed(1)}).join(" ")+" Z";paths.push(d);}));host.innerHTML='<svg viewBox="0 0 360 240" role="img" aria-label="'+state.name+' state outline"><path class="shape" d="'+paths.join(" ")+'"/></svg>';}
 async function loadGeo(){
  if(geoFeatures)return;
  try{let res=await fetch("https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json");if(!res.ok)throw Error();let json=await res.json();geoFeatures=json.features;}
  catch(e){geoFeatures=[];}
 }
-function renderCard(){
- const state=deck[index],field=getField(),side=flipped?"BACK":"FRONT";
- $("faceLabel").textContent=side+" · "+fieldNames[field].toUpperCase();
- const host=$("cardContent");
- if(field==="shape"){renderShape(state);}else{host.className="answer";host.textContent=state[field];if(state.name.length>16||state.capital.length>16)host.classList.add("small");}
- $("progressText").textContent="Card "+(index+1)+" of "+deck.length;
- $("progressFill").style.width=(index/deck.length*100)+"%";
- $("completedCount").textContent=index+" / "+deck.length;
- $("hardCount").textContent=sessionHard.size;
- $("hardBtn").classList.toggle("active",sessionHard.has(state.abbr));
- $("hardBtn").textContent=sessionHard.has(state.abbr)?"★ Marked Hard":"★ Hard";
- $("flipBtn").textContent=flipped?"Show front":"Flip card";
- $("nextBtn").textContent=index===deck.length-1?"Finish session ✓":"Next card →";
- updateTimer();
-}
+function renderCard(){const state=deck[index],fields=getFields(),side=flipped?"BACK":"FRONT";$("faceLabel").textContent=side+" · "+fields.map(f=>fieldNames[f]).join(" + ").toUpperCase();const host=$("cardContent");host.className="card-values";host.innerHTML="";fields.forEach(field=>{if(field==="shape"){const shape=document.createElement("div");shape.className="shape-wrap";host.append(shape);renderShapeInto(state,shape);}else{const item=document.createElement("div");item.className="answer"+(state[field].length>16?" small":"");item.textContent=state[field];host.append(item);}});$("progressText").textContent="Card "+(index+1)+" of "+deck.length;$("progressFill").style.width=(index/deck.length*100)+"%";$("completedCount").textContent=index+" / "+deck.length;$("hardCount").textContent=sessionHard.size;$("hardBtn").classList.toggle("active",sessionHard.has(state.abbr));$("hardBtn").textContent=sessionHard.has(state.abbr)?"★ Saved for later":"★ Save for later";$("previousBtn").disabled=index===0;$("tapHint").textContent=flipped?(index===deck.length-1?"Tap card to finish":"Tap card for next card"):"Tap card to reveal";updateTimer();}
 function markHard(){let s=deck[index];if(sessionHard.has(s.abbr)){sessionHard.delete(s.abbr);hardSaved.delete(s.abbr);}else{sessionHard.add(s.abbr);hardSaved.add(s.abbr);}saveHard();renderCard();}
-function nextCard(){if(index===deck.length-1){finish();return;}index++;flipped=false;renderCard();}
+function advanceCard(){if(index===deck.length-1){finish();return;}index++;flipped=false;renderCard();}
+function cardTap(){if(!flipped){flipped=true;renderCard();}else{advanceCard();}}
+function previousCard(){if(index>0){index--;flipped=false;renderCard();}}
 function finish(){
  clearInterval(tick);elapsed=currentElapsed();$("finalTime").textContent=timeText(elapsed);
  $("resultSubtitle").textContent="You completed "+deck.length+" "+(deck.length===1?"card.":"cards.");
@@ -158,8 +131,9 @@ $("selectHard").onclick=()=>setSelection([...hardSaved]);
 $("startCustom").onclick=()=>{let ids=[...$("stateGrid").querySelectorAll("input:checked")].map(cb=>cb.value);startGame(STATES.filter(s=>ids.includes(s.abbr)),"custom");};
 $("backHome").onclick=()=>{clearInterval(tick);show("home");};
 $("hardBtn").onclick=markHard;
-$("flipBtn").onclick=()=>{flipped=!flipped;renderCard();};
-$("nextBtn").onclick=nextCard;
+$("previousBtn").onclick=previousCard;
+$("flashcard").addEventListener("click",cardTap);
+$("flashcard").addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();cardTap();}});
 $("reviewHard").onclick=()=>startGame(STATES.filter(s=>hardSaved.has(s.abbr)),"custom");
 $("restart").onclick=()=>startGame(lastDeck,"custom");
 $("homeResults").onclick=()=>show("home");
