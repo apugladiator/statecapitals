@@ -45,7 +45,7 @@ main{max-width:1120px;margin:26px auto;padding:0 18px 48px}.panel{background:whi
 <section id="study" class="hidden">
   <div class="study-layout">
     <div class="study-main">
-      <div class="topline"><button class="subtle" id="backHome">← Back to setup</button><div class="progress" id="progressText">Card 1 of 50</div></div>
+      <div class="topline"><button class="subtle" id="backHome">Main Menu</button><div class="progress" id="progressText">Card 1 of 50</div></div>
       <div class="progressbar"><span id="progressFill"></span></div>
       <div class="flashcard" id="flashcard" role="button" tabindex="0" aria-label="Tap to reveal; tap again for next card">
         <div class="face-label" id="faceLabel">FRONT · STATE NAME</div>
@@ -69,7 +69,7 @@ main{max-width:1120px;margin:26px auto;padding:0 18px 48px}.panel{background:whi
     <p class="muted" id="resultSubtitle">You completed all 50 cards.</p>
     <div class="big-time" id="finalTime">00:00</div><div class="muted">Total time</div>
     <div class="hard-list"><h3 style="color:var(--navy)">States you marked Hard</h3><div id="hardResults"></div></div>
-    <div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap"><button class="primary" id="reviewHard">Study Hard states</button><button class="secondary" id="restart">Start another session</button><button class="subtle" id="homeResults">Back to setup</button></div>
+    <div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap"><button class="primary" id="reviewHard">Study Hard states</button><button class="secondary" id="restart">Start another session</button><button class="subtle" id="homeResults">Main Menu</button></div>
   </div>
 </section>
 </main>
@@ -94,7 +94,8 @@ function renderPicker(){
  updateSelectionCount();
 }
 function updateSelectionCount(){let n=$("stateGrid").querySelectorAll("input:checked").length;$("selectionCount").textContent=n+" selected";}
-function openCustom(){mode="custom";$("customPicker").classList.remove("hidden");renderPicker();show("home");}
+function setModeButtons(which){$("allMode").classList.toggle("primary",which==="all");$("allMode").classList.toggle("secondary",which!=="all");$("customMode").classList.toggle("primary",which==="custom");$("customMode").classList.toggle("secondary",which!=="custom");}
+function openCustom(){mode="custom";setModeButtons("custom");$("customPicker").classList.remove("hidden");renderPicker();show("home");}
 function setSelection(list){$("stateGrid").querySelectorAll("input").forEach(cb=>cb.checked=list.includes(cb.value));updateSelectionCount();}
 function startGame(list,which){
  if(!list.length){alert("Please select at least one state.");return;}
@@ -123,7 +124,7 @@ function finish(){
  else{box.innerHTML=hardStates.map(s=>'<div class="hard-row"><strong>'+s.name+' ('+s.abbr+')</strong><span class="muted">'+s.capital+'</span></div>').join("");$("reviewHard").classList.remove("hidden");}
  show("results");
 }
-$("allMode").onclick=()=>startGame(STATES,"all");
+$("allMode").onclick=()=>{setModeButtons("all");$("customPicker").classList.add("hidden");startGame(STATES,"all");};
 $("customMode").onclick=openCustom;
 $("selectAll").onclick=()=>setSelection(STATES.map(s=>s.abbr));
 $("selectNone").onclick=()=>setSelection([]);
